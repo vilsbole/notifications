@@ -49,5 +49,3 @@ yarn
 # run the dev server
 yarn dev
 ```
-
-
