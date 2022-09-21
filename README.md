@@ -24,7 +24,7 @@ The current frontend is very minimal and you will be in charge to:
 
 - fork and clone this repository
 - complete the homework
-- do as many commits as you want
+- add as many commits as you want
 - push your work on you fork
 - The deliverable will be your fork URL 🚀
 
