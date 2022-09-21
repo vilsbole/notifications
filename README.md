@@ -17,7 +17,7 @@ The current frontend is very minimal and you will be in charge to:
 - create any components you would need and feel free to restructure the files architecture
 - ⚠️ we intentionnally put some bugs/problems in the code, happy debugging 🥳
 - add code quality tools (linting, formatting)
-- 🎁 **bonus** github action that runs those tools
+- 🎁 **bonus** a github action to run those tools
 - 🎁 **bonus** anything cool you have in mind
 
 ## Getting started
