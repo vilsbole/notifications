@@ -9,7 +9,7 @@ The main goal of the homework is to build a simple interface to search accross a
 ![1618934372](https://user-images.githubusercontent.com/944835/115428225-79153780-a202-11eb-9baa-c86e02f97401.png)
 
 You will be provided with a backend which serves a single `search` endpoint.
-⚠️ There is a bug in the search code that you will have to fix 😏
+⚠️ There is a bug in the search code which you will need to fix 😏
 
 The current frontend is very minimal and you will be in charge to:
 - develop a nice UI/UX experience. Mockups in this document just give a rough indications of what are the features of the application. Feel free to implement any layout you find pretty and that offers the best UX experience
