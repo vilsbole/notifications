@@ -8,8 +8,8 @@ The main goal of the homework is to build a simple interface to search accross a
 ![1618934381](https://user-images.githubusercontent.com/944835/115428224-787ca100-a202-11eb-8519-cf03d3127309.png)
 ![1618934372](https://user-images.githubusercontent.com/944835/115428225-79153780-a202-11eb-9baa-c86e02f97401.png)
 
-You will be provided with a backend with a search endpoint that handles the server part.
-⚠️ There is a bug in the search code that you will have to fix 😏 
+You will be provided with a backend which serves a single `search` endpoint.
+⚠️ There is a bug in the search code that you will have to fix 😏
 
 The current frontend is very minimal and you will be in charge to:
 - develop a nice UI/UX experience. Mockups in this document just give a rough indications of what are the features of the application. Feel free to implement any layout you find pretty and that offers the best UX experience
