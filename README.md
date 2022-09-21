@@ -26,7 +26,7 @@ The current frontend is very minimal and you will be in charge to:
 - complete the homework
 - add as many commits as you want
 - push your work on your fork
-- The deliverable will be your fork URL 🚀
+- the deliverable will be your fork URL 🚀
 
 We hope you will enjoy the challenge 💪
 
