@@ -16,7 +16,7 @@ The current frontend is very minimal and you will be in charge to:
 - develop a nice UI/UX experience. Mockups in this document merely provide a rough indication of the application features. Feel free to implement any layout you find pretty and that offers the best UX experience
 - create any components you would need and feel free to restructure the files architecture
 - ⚠️ we intentionnally put some bugs/problems in the code, happy debugging 🥳
-- add code quality tools (linting, formating)
+- add code quality tools (linting, formatting)
 - 🎁 **bonus** github action that runs those tools
 - 🎁 **bonus** anything cool you have in mind
 
