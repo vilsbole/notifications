@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "format": "prettier . --ignore-path .gitignore '!tsconfig.json' --list-different",
-    "format:write": "yarn format --write"
+    "format:write": "yarn format --write",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -13,9 +14,14 @@
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "@types/styled-components": "^5.1.9",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "parcel": "^2.0.0-beta.2",
     "prettier": "^2.7.1",
     "typescript": "^4.8.3"
   },
-  "private": true
+  "private": true,
+  "lint-staged": {
+    "**/*": "yarn format:write"
+  }
 }
