@@ -13,11 +13,15 @@ const App = () => {
 
   useEffect(() => {
     const effect = async () => {
-      // FIXME there is something wrong with this loading state... to be investigated :D
       setLoading(true)
-      const res = await fetch(`${API}/search?q=${searchText}`)
-      const data = await res.json()
-      setResults(data)
+      try {
+        const data = await fetch(`${API}/search?q=${searchText}`).then((res) => res.json())
+        setResults(data)
+        setLoading(false)
+      } catch (err) {
+        console.error(err)
+        setLoading(false)
+      }
     }
     effect()
   }, [searchText, setLoading, setResults])
