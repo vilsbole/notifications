@@ -10,7 +10,7 @@ CORS(app)
 @app.route('/search')
 def search_handler():
     # simulate long request
-    time.sleep(2)
+    time.sleep(0.4)
 
     search_text = request.args.get('q')
     if not search_text:
