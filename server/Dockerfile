@@ -1,8 +1,8 @@
 FROM ubuntu:22.04
-RUN apt-get update -y && apt-get install -y python-pip python2-dev
+RUN apt-get update -y && apt-get install -y python3-pip python3-dev
 COPY ./requirements.txt /app/requirements.txt
 WORKDIR /app
-RUN pip2 install -r requirements.txt
+RUN pip install -r requirements.txt
 COPY . /app
-ENTRYPOINT [ "python" ]
+ENTRYPOINT [ "python3" ]
 CMD [ "app.py" ]
