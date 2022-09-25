@@ -6,7 +6,10 @@ import GlobalStyle from './GlobalStyle'
 
 const rootNode = document.getElementById('root')
 
-render(<>
-       <GlobalStyle />
-       <App />
-</>, rootNode)
+render(
+  <>
+    <GlobalStyle />
+    <App />
+  </>,
+  rootNode
+)

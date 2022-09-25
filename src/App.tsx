@@ -6,8 +6,8 @@ import Input from './Input'
 const API = 'http://localhost:5000'
 
 type Notif = {
-  id: string,
-  type: string,
+  id: string
+  type: string
   // FIXME we should *probably* not have this `any`
   data: any
 }
@@ -25,24 +25,22 @@ const App = () => {
       const data = await res.json()
       setResults(data)
     }
-    effect();
+    effect()
   }, [searchText, setLoading, setResults])
 
   return (
     <Container>
-    <Input value={searchText} onChange={setSearchText}
-      placeholder="Type to filter events"
-    />
-    {isLoading ? <div>{"Loading..."}</div> : results ? (
-      <div>
-      {results.map(
-        r => (
-          // TODO we must finalize this integration!! not very pretty like this
-          <Item>{JSON.stringify(r)}</Item>
-        )
-      )}
-      </div>
-    ) : null}
+      <Input value={searchText} onChange={setSearchText} placeholder="Type to filter events" />
+      {isLoading ? (
+        <div>{'Loading...'}</div>
+      ) : results ? (
+        <div>
+          {results.map((r) => (
+            // TODO we must finalize this integration!! not very pretty like this
+            <Item>{JSON.stringify(r)}</Item>
+          ))}
+        </div>
+      ) : null}
     </Container>
   )
 }

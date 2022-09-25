@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 type Props = {
-  placeholder: string,
-  value: string,
-  onChange: (v: string) => void,
+  placeholder: string
+  value: string
+  onChange: (v: string) => void
 }
 
 const Input = ({ value, onChange, placeholder }: Props) => {
@@ -12,14 +12,7 @@ const Input = ({ value, onChange, placeholder }: Props) => {
   const handleChange = (e: any) => {
     onChange(e.target.value)
   }
-  return (
-    <StyledInput
-      type="text"
-      value={value}
-      onChange={handleChange}
-      placeholder={placeholder}
-    />
-  )
+  return <StyledInput type="text" value={value} onChange={handleChange} placeholder={placeholder} />
 }
 
 const StyledInput = styled.input`
