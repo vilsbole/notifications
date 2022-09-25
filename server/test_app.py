@@ -33,3 +33,7 @@ def test_search_filters_by_type(client):
 def test_search_filter_is_case_insenstive(client):
     response = client.get("/search?q=created")
     assert [mock_data[2]] == response.get_json()
+
+def test_search_filter_returns_an_empty_array_when_no_match(client):
+    response = client.get("/search?q=doesNotExist")
+    assert [] == response.get_json()
