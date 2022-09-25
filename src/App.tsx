@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import type { Notification } from './types'
 
 import Input from './Input'
 
 const API = 'http://localhost:5000'
 
-type Notif = {
-  id: string
-  type: string
-  // FIXME we should *probably* not have this `any`
-  data: any
-}
-
 const App = () => {
   const [searchText, setSearchText] = useState('')
   const [isLoading, setLoading] = useState(false)
-  const [results, setResults] = useState<null | Notif[]>(null)
+  const [results, setResults] = useState<null | Notification[]>(null)
 
   useEffect(() => {
     const effect = async () => {
