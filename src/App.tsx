@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { useDebounce } from 'react-use'
 import type { Notification } from './types'
-
 import Input from './Input'
 
 const API = 'http://localhost:5000'
@@ -11,8 +11,8 @@ const App = () => {
   const [isLoading, setLoading] = useState(false)
   const [results, setResults] = useState<null | Notification[]>(null)
 
-  useEffect(() => {
-    const effect = async () => {
+  const [_, cancel] = useDebounce(
+    async () => {
       setLoading(true)
       try {
         const data = await fetch(`${API}/search?q=${searchText}`).then((res) => res.json())
@@ -22,9 +22,14 @@ const App = () => {
         console.error(err)
         setLoading(false)
       }
-    }
-    effect()
-  }, [searchText, setLoading, setResults])
+    },
+    200,
+    [searchText, setLoading, setResults]
+  )
+
+  useEffect(() => {
+    return cancel
+  }, [cancel])
 
   return (
     <Container>
