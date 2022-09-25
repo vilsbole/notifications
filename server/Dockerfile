@@ -10,4 +10,4 @@ ENTRYPOINT [ "python3" ]
 CMD [ "app.py" ]
 
 FROM base as test
-CMD [ "pytest" ]
+CMD [ "pytest", "-vv" ]

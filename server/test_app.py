@@ -25,3 +25,11 @@ def runner(app):
 def test_search_returns_all_by_default(client):
     response = client.get("/search")
     assert mock_data == response.get_json()
+
+def test_search_filters_by_type(client):
+    response = client.get("/search?q=CREATED")
+    assert [mock_data[2]] == response.get_json()
+
+def test_search_filter_is_case_insenstive(client):
+    response = client.get("/search?q=created")
+    assert [mock_data[2]] == response.get_json()
