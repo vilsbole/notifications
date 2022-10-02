@@ -1,7 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import styled from 'styled-components'
 import { useDebounce } from 'react-use'
-import { TextInput, Toolbar, Window, WindowContent, WindowHeader } from '../../components'
+import {
+  Hourglass,
+  TextInput,
+  Toolbar,
+  Window,
+  WindowContent,
+  WindowHeader,
+} from '../../components'
 import { getSearchResults } from '../../services'
 import { Notification } from '../../types'
 import { NotificationList } from './NotificationList'
@@ -11,12 +18,16 @@ const SWrapper = styled.div`
   .window {
     width: 660px;
   }
+  .window-content {
+    margin: 15% auto;
+    text-align: center;
+  }
 `
 
 export const Notifications: React.FC = () => {
   const [searchText, setSearchText] = useState('')
   const [isLoading, setLoading] = useState(false)
-  const [results, setResults] = useState<null | Notification[]>(null)
+  const [results, setResults] = useState<undefined | Notification[]>(undefined)
 
   const [_, cancel] = useDebounce(
     async () => {
@@ -53,10 +64,14 @@ export const Notifications: React.FC = () => {
         </Toolbar>
         <WindowContent>
           {isLoading ? (
-            <div>{'Loading...'}</div>
-          ) : results ? (
+            <div className="window-content">
+              <Hourglass size="1.5rem" />
+            </div>
+          ) : results && results.length > 0 ? (
             <NotificationList list={results} />
-          ) : null}
+          ) : (
+            <div className="window-content">No results</div>
+          )}
         </WindowContent>
       </Window>
     </SWrapper>
