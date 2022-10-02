@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'react-use'
 import type { Notification } from './types'
-import { Input, Container as Flexbox, NotificationItem } from './components'
+import { Input, Container as Flexbox, NotificationItem, NotificationList } from './components'
 
 const API = 'http://localhost:5000'
 
@@ -33,15 +33,7 @@ const App = () => {
   return (
     <Flexbox>
       <Input value={searchText} onChange={setSearchText} placeholder="Type to filter events" />
-      {isLoading ? (
-        <div>{'Loading...'}</div>
-      ) : results ? (
-        <div>
-          {results.map((data, idx) => (
-            <NotificationItem key={idx} data={data} />
-          ))}
-        </div>
-      ) : null}
+      {isLoading ? <div>{'Loading...'}</div> : results ? <NotificationList list={results} /> : null}
     </Flexbox>
   )
 }
