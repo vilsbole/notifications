@@ -1,6 +1,6 @@
 import React from 'react'
-import { Item } from './Item'
-import { Notification } from '../types'
+import { Item } from '../../components'
+import { Notification } from '../../types'
 
 const getNotificationComponent = (type: Notification['type']) => {
   switch (type) {

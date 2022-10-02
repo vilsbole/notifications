@@ -1,23 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
+import { styleReset } from 'react95'
 
 export default createGlobalStyle`
-  *, *:after, *:before {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-    border: none;
-  }
+  ${styleReset}
 
-  html {
-    box-sizing: border-box;
+  html, body, #root {
     height: 100%;
   }
 
-  body {
-    padding: 24px;
-    height: 100%;
+  #root {
+    background-color: rgb(0, 128, 128);
   }
 `

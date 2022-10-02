@@ -6202,6 +6202,11 @@ react-use@^17.4.0:
     ts-easing "^0.2.0"
     tslib "^2.1.0"
 
+react95@^4.0.0-beta.13:
+  version "4.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/react95/-/react95-4.0.0-beta.13.tgz#a47e56565e5c6456b61858995cba4774e945a2da"
+  integrity sha512-DAt09Hki0yA2ncEyuo4JLERpeWKBM8FXbxpCRAZ7S3KYGzoy8XiCjXa8OEQOpcE+XQ3jNJ9cOnp+vCf833aEQg==
+
 react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
