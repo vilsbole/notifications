@@ -1,3 +1,5 @@
+[![CI](https://github.com/vilsbole/notifications/actions/workflows/github-ci.yml/badge.svg)](https://github.com/vilsbole/notifications/actions/workflows/github-ci.yml)
+
 # vault-front-homework
 
 ## Objectives
