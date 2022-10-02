@@ -14,4 +14,5 @@ export {
   WindowContent,
   WindowHeader,
   Hourglass,
+  Frame,
 } from 'react95'

@@ -1,8 +1,13 @@
-type WAddress = string
+import { NotifType } from './constants'
 
-interface NotifTranscation {
-  id: string
-  type: 'TRANSACTION_SENT' | 'TRANSACTION_RECEIVED'
+type WAddress = string
+interface NotifBase {
+  id: number
+  type: NotifType
+  data: Record<string, unknown>
+}
+export interface NotifTranscation extends NotifBase {
+  type: NotifType.TX_SENT | NotifType.TX_RECEIVED
   data: {
     id: number
     amount: number
@@ -12,9 +17,8 @@ interface NotifTranscation {
   }
 }
 
-interface NotifAccountCreated {
-  id: number
-  type: 'ACCOUNT_CREATED'
+export interface NotifAccountCreated extends NotifBase {
+  type: NotifType.ACCOUNT_CREATED
   data: {
     id: number
     name: string

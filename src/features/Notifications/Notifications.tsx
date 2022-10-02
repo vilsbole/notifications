@@ -53,7 +53,7 @@ export const Notifications: React.FC = () => {
     <SWrapper>
       <Window className="window">
         <WindowHeader>
-          <span>Notification Search</span>
+          <span>Notifications Search</span>
         </WindowHeader>
         <Toolbar>
           <TextInput
