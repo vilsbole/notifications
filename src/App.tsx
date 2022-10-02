@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'react-use'
 import type { Notification } from './types'
-import { Input, Container as Flexbox, NotificationItem, NotificationList } from './components'
-
-const API = 'http://localhost:5000'
+import { Input, Container as Flexbox, NotificationList } from './components'
+import { getSearchResults } from './services'
 
 const App = () => {
   const [searchText, setSearchText] = useState('')
@@ -14,7 +13,7 @@ const App = () => {
     async () => {
       setLoading(true)
       try {
-        const data = await fetch(`${API}/search?q=${searchText}`).then((res) => res.json())
+        const data = await getSearchResults(searchText)
         setResults(data)
         setLoading(false)
       } catch (err) {
