@@ -19,3 +19,12 @@ jobs:
         uses: borales/actions-yarn@v3.0.0
         with:
           cmd: lint
+  server:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build test image
+        working-directory: ./server
+        run: docker build . --tag search-service-test:${GITHUB_SHA} --target test
+      - name: Run tests
+        run: docker run -p 5000:5000 search-service-test:${GITHUB_SHA}
