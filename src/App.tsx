@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
 import { useDebounce } from 'react-use'
 import type { Notification } from './types'
-import Input from './Input'
+import { Input, Container, Item } from './components'
 
 const API = 'http://localhost:5000'
 
@@ -47,15 +46,5 @@ const App = () => {
     </Container>
   )
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-`
-
-const Item = styled.div`
-  border: 2px dashed red;
-`
 
 export default App
