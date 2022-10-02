@@ -13,9 +13,11 @@ export default createGlobalStyle`
 
   html {
     box-sizing: border-box;
+    height: 100%;
   }
 
   body {
     padding: 24px;
+    height: 100%;
   }
 `

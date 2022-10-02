@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'react-use'
 import type { Notification } from './types'
-import { Input, Container, Item } from './components'
+import { Input, Container as Flexbox, NotificationItem } from './components'
 
 const API = 'http://localhost:5000'
 
@@ -31,19 +31,18 @@ const App = () => {
   }, [cancel])
 
   return (
-    <Container>
+    <Flexbox>
       <Input value={searchText} onChange={setSearchText} placeholder="Type to filter events" />
       {isLoading ? (
         <div>{'Loading...'}</div>
       ) : results ? (
         <div>
-          {results.map((r) => (
-            // TODO we must finalize this integration!! not very pretty like this
-            <Item>{JSON.stringify(r)}</Item>
+          {results.map((data, idx) => (
+            <NotificationItem key={idx} data={data} />
           ))}
         </div>
       ) : null}
-    </Container>
+    </Flexbox>
   )
 }
 
